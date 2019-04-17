@@ -1,0 +1,76 @@
+<style>
+*{margin-left:0;
+Margin-right:0;
+}
+
+#game-board{
+  width:300px;
+  height:300px;
+  max-height:300px;
+  min-height:300px;
+  display:grid;  
+  grid-template-columns:1fr 1fr 1fr;
+  margin-left:calc(50vw - 150px);
+}
+.piece-block{
+  width:100px;
+  height:100px;
+  border:solid 1px black;
+}
+
+#command{
+  margin-top:50px;
+  width:300px;
+  height:150px;
+  max-height:150px;
+  min-height:150px;
+  margin-left:calc(50vw - 150px);
+  text-align:center;
+}
+
+button{
+  width:100px;
+  height:50px;
+  border-radius:15px;
+  font-size:24px;
+  font-weight:bold;
+}
+</style>
+
+<script>
+var gameMarker = "X";
+function changeMarkerToX(){ 
+  gameMarker = "X";
+  console.log("The X button was clicked");
+}
+
+function changeMarkerToO(){ 
+  gameMarker = "O";
+  console.log("The O button was clicked");
+}
+
+function placeMark(divId){
+  var box = document.getElementById(divId);
+  box.innerHTML = gameMarker;
+}
+</script>
+
+<body>
+  <section id="game-board">
+    <div id="square1" class="piece-block" onClick="placeMark('square1')"></div>
+    <div id="square2" class="piece-block" onClick="placeMark('square2')">
+      </div>
+    <div id="square3" class="piece-block" onClick="placeMark('square3')"> 
+      </div><div id="square4" class="piece-block" onClick="placeMark('square4')"></div>
+    <div id="square5" class="piece-block" onClick="placeMark('square5')"></div>
+    <div id="square6" class="piece-block" onClick="placeMark('square6')"></div>
+    <div id="square7" class="piece-block" onClick="placeMark('square7')"></div>
+    <div id="square8" class="piece-block" onClick="placeMark('square8')"></div>
+    <div id="square9" class="piece-block" onClick="placeMark('square9')"></div>
+   </div>
+  </section>
+          <section id="command">
+<button id="btnX" name="X" onclick="changeMarkerToX()">X</button>
+            <button id="btnO" name="O" onclick="changeMarkerToO()">O</button>
+  
+</body>
